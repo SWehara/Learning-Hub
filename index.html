@@ -49,14 +49,14 @@
       to { opacity: 1; transform: translateY(0);}
     }
 
-    .hearts {
+    .stars {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       pointer-events: none;
       overflow: hidden;
     }
 
-    .heart {
+    .star {
       position: absolute;
       width: 20px;
       height: 20px;
@@ -65,9 +65,9 @@
       animation: floatUp linear infinite;
     }
 
-    .heart::before,
-    .heart::after {
-      content: "";
+    .star::before,
+    .star::after {
+      content: "🌟";
       position: absolute;
       width: 20px;
       height: 20px;
@@ -75,8 +75,8 @@
       border-radius: 50%;
     }
 
-    .heart::before { top: -10px; left: 0; }
-    .heart::after { left: 10px; top: 0; }
+    .star::before { top: -10px; left: 0; }
+    .star::after { left: 10px; top: 0; }
 
     @keyframes floatUp {
       0% { transform: translateY(100vh) rotate(45deg); opacity: 1;}
@@ -85,7 +85,7 @@
   </style>
 </head>
 <body>
-  <div class="hearts" id="hearts"></div>
+  <div class="stars" id="stars"></div>
 
   <button onclick="showMessage()">Click Me</button>
   <p id="message">Hi Dulya, How are you doing? </p>
@@ -93,22 +93,22 @@
   <script>
     function showMessage() {
       document.getElementById("message").style.display = "block";
-      createHearts();
+      createStars();
     }
 
-    function createHearts() {
-      const heartsContainer = document.getElementById('hearts');
+    function createStars() {
+      const starsContainer = document.getElementById('stars');
       for(let i=0; i<30; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = 3 + Math.random() * 3 + 's';
-        heart.style.width = 10 + Math.random() * 20 + 'px';
-        heart.style.height = heart.style.width;
-        heartsContainer.appendChild(heart);
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = 3 + Math.random() * 3 + 's';
+        star.style.width = 10 + Math.random() * 20 + 'px';
+        star.style.height = star.style.width;
+        starsContainer.appendChild(star);
 
-        // remove heart after animation
-        setTimeout(() => heart.remove(), 6000);
+        // remove star after animation
+        setTimeout(() => star.remove(), 6000);
       }
     }
   </script>
