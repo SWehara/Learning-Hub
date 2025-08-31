@@ -58,21 +58,15 @@
 
     .star {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      transform: rotate(45deg);
+      color: yellow;
+      font-size: 20px;
       animation: floatUp linear infinite;
     }
 
     .star::before,
     .star::after {
       content: "🌟";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      border-radius: 50%;
+      
     }
 
     .star::before { top: -10px; left: 0; }
