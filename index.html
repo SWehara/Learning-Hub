@@ -3,108 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heyyy</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-    body {
-      background: linear-gradient(135deg, #000000 0%, #000000 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: 'Pacifico', cursive;
-      color: #000000;
-      text-align: center;
-    }
-
-    button {
-      padding: 15px 30px;
-      font-size: 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      background: #dac9d9;
-      color: rgb(10, 10, 10);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: transform 0.2s, background 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.1);
-      background: #a5a5a5;
-    }
-
-    p {
-      margin-top: 30px;
-      font-size: 28px;
-      color: #ffffff;
-      display: none;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-
-    .stars {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      color: yellow;
-      font-size: 20px;
-      animation: floatUp linear infinite;
-    }
-
-    .star::before,
-    .star::after {
-      content: "🌟";
-      
-    }
-
-    .star::before { top: -10px; left: 0; }
-    .star::after { left: 10px; top: 0; }
-
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) rotate(45deg); opacity: 1;}
-      100% { transform: translateY(-100px) rotate(45deg); opacity: 0;}
-    }
-  </style>
+  <title>Learning Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="stars" id="stars"></div>
+  <header>
+    <h1>Learning Hub</h1>
+    <p>Explore subjects and expand your knowledge!</p>
+  </header>
 
-  <button onclick="showMessage()">Click Me</button>
-  <p id="message">Hey Thulani, How are you doing? </p>
+  <main class="grid-container">
+    <div class="card">
+      <img src="images/math.png" alt="Math Icon">
+      <h2>Mathematics</h2>
+      <p>Learn algebra, geometry, statistics, and trigonometry basics.</p>
+    </div>
 
-  <script>
-    function showMessage() {
-      document.getElementById("message").style.display = "block";
-      createStars();
-    }
+    <div class="card">
+      <img src="images/science.png" alt="Science Icon">
+      <h2>Science</h2>
+      <p>Explore physics, chemistry, and biology fundamentals.</p>
+    </div>
 
-    function createStars() {
-      const starsContainer = document.getElementById('stars');
-      for(let i=0; i<30; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.left = Math.random() * 100 + 'vw';
-        star.style.animationDuration = 3 + Math.random() * 3 + 's';
-        star.style.width = 10 + Math.random() * 20 + 'px';
-        star.style.height = star.style.width;
-        starsContainer.appendChild(star);
+    <div class="card">
+      <img src="images/english.png" alt="English Icon">
+      <h2>English</h2>
+      <p>Improve grammar, writing, and comprehension skills.</p>
+    </div>
 
-        // remove star after animation
-        setTimeout(() => star.remove(), 6000);
-      }
-    }
-  </script>
+    <div class="card">
+      <img src="images/history.png" alt="History Icon">
+      <h2>History</h2>
+      <p>Discover local and world history, key events, and figures.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/geography.png" alt="Geography Icon">
+      <h2>Geography</h2>
+      <p>Understand physical and human geography, maps, and environments.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/commerce.png" alt="Commerce Icon">
+      <h2>Commerce</h2>
+      <p>Learn basics of economics, accounting, and business studies.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/ict.png" alt="ICT Icon">
+      <h2>ICT</h2>
+      <p>Understand computer fundamentals and basic programming.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/language.png" alt="Language Icon">
+      <h2>Sinhala</h2>
+      <p>Study language, literature, and grammar skills.</p>
+    </div>
+  </main>
 </body>
 </html>
