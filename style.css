@@ -21,12 +21,13 @@ header p {
   margin: 0;
 }
 
+/* Subject Cards */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 40px 20px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -58,3 +59,84 @@ header p {
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
+/* Study Tips Section */
+.tips-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #eafaf1;
+  border-left: 6px solid #4CAF50;
+  border-radius: 10px;
+}
+
+.tips-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tips-section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+.tips-section li {
+  margin-bottom: 10px;
+}
+
+/* Motivational Carousel */
+.carousel {
+  max-width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+  background-color: #fff3e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel-track {
+  display: flex;
+  animation: slide 16s linear infinite;
+}
+
+.carousel-track p {
+  flex: 0 0 100%;
+  margin: 0;
+  font-style: italic;
+  font-size: 18px;
+  color: #ff6f00;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  20% { transform: translateX(0%); }
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  header {
+    padding: 30px 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .carousel-track p {
+    font-size: 16px;
+  }
+}
+
